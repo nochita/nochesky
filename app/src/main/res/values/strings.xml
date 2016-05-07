@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Nochesky</string>
+    <string name="see_messier">See Messier Catalog</string>
+
+    <string name="observable_object_detail_message" formatted="false">(%1s) - %2s - %3s - Right Ascension: %4s -
+        Declination: %5s - Magnitude: %6s - Size %7s - Distance: %8s</string>
+</resources>
