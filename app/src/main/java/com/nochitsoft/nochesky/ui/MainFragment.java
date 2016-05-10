@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nochitsoft.nochesky.R;
+import com.nochitsoft.nochesky.catalog.BaseCatalog;
+import com.nochitsoft.nochesky.catalog.GalaxiesCatalog;
+import com.nochitsoft.nochesky.catalog.GlobularClusterCatalog;
+import com.nochitsoft.nochesky.catalog.MessierCatalog;
+import com.nochitsoft.nochesky.catalog.NebulaCatalog;
+import com.nochitsoft.nochesky.catalog.OpenClusterCatalog;
 
 public class MainFragment extends Fragment {
 
@@ -29,8 +35,43 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.see_messier_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), CatalogListActivity.class));
+                doStartCatalogActivity(new MessierCatalog());
+            }
+        });
+
+        view.findViewById(R.id.see_open_cluster_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doStartCatalogActivity(new OpenClusterCatalog());
+            }
+        });
+
+        view.findViewById(R.id.see_globular_cluster_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doStartCatalogActivity(new GlobularClusterCatalog());
+            }
+        });
+
+        view.findViewById(R.id.see_galaxy_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doStartCatalogActivity(new GalaxiesCatalog());
+            }
+        });
+
+        view.findViewById(R.id.see_nebula_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doStartCatalogActivity(new NebulaCatalog());
             }
         });
     }
+
+    private void doStartCatalogActivity(BaseCatalog catalog){
+        Intent intent = new Intent(getContext(), CatalogListActivity.class);
+        intent.putExtra(CatalogListActivity.EXTRA_CATALOG, catalog);
+        startActivity(intent);
+    }
+
 }

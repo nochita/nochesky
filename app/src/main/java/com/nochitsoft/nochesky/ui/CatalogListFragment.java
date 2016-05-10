@@ -10,15 +10,29 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nochitsoft.nochesky.R;
+import com.nochitsoft.nochesky.catalog.BaseCatalog;
 import com.nochitsoft.nochesky.catalog.MessierCatalog;
 
 public class CatalogListFragment extends Fragment {
 
+    private static final String ARG_CATALOG = "ARG_CATALOG";
     private RecyclerView recyclerView;
     private CatalogListAdapter adapter;
+    private BaseCatalog catalog;
 
-    public static CatalogListFragment newInstance() {
-        return new CatalogListFragment();
+    public static CatalogListFragment newInstance(BaseCatalog catalog) {
+        CatalogListFragment fragment = new CatalogListFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_CATALOG, catalog);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle args = getArguments();
+        catalog = (BaseCatalog) args.getSerializable(ARG_CATALOG);
     }
 
     @Nullable
@@ -37,8 +51,9 @@ public class CatalogListFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        // TODO load from database
-        adapter = new CatalogListAdapter(getActivity(), new MessierCatalog().load());
+        adapter = new CatalogListAdapter(getActivity(), catalog.load());
+
+        getActivity().setTitle(catalog.getName());
 
         recyclerView.setAdapter(adapter);
     }

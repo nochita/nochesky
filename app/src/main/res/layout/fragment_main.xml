@@ -13,11 +13,31 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/see_catalogs" />
 
     <Button
         android:id="@+id/see_messier_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/see_messier"/>
+        android:text="@string/messier"
+        style="@style/CatalogButton"/>
+
+    <Button
+        android:id="@+id/see_open_cluster_button"
+        android:text="@string/open_cluster"
+        style="@style/CatalogButton"/>
+
+    <Button
+        android:id="@+id/see_globular_cluster_button"
+        android:text="@string/globular_cluster"
+        style="@style/CatalogButton"/>
+
+    <Button
+        android:id="@+id/see_galaxy_button"
+        android:text="@string/galaxies"
+        style="@style/CatalogButton"/>
+
+    <Button
+        android:id="@+id/see_nebula_button"
+        android:text="@string/nebulae"
+        style="@style/CatalogButton"/>
+
 </LinearLayout>

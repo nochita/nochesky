@@ -18,8 +18,8 @@ public class TimeFormat {
         this.setPositive(isPositive);
     }
 
-    public TimeFormat(int hour, int minute, int second, int hourMaxima) {
-        this(hour, minute, second, hourMaxima, true);
+    public TimeFormat(int hour, int minute, int second, int maxHour) {
+        this(hour, minute, second, maxHour, true);
     }
 
     public TimeFormat(int hour, int minute, int second) {

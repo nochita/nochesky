@@ -15,4 +15,9 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="CatalogButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/main_fragment_button_margin_top</item>
+    </style>
 </resources>

@@ -2,11 +2,16 @@ package com.nochitsoft.nochesky.ui;
 
 import android.support.v4.app.Fragment;
 
+import com.nochitsoft.nochesky.catalog.BaseCatalog;
+
 public class CatalogListActivity extends BaseActivity {
+
+    public static final String EXTRA_CATALOG = "EXTRA_CATALOG";
 
     @Override
     protected Fragment getFragment() {
-        return CatalogListFragment.newInstance();
+        BaseCatalog catalog = (BaseCatalog) getIntent().getSerializableExtra(EXTRA_CATALOG);
+        return CatalogListFragment.newInstance(catalog);
     }
 
 }

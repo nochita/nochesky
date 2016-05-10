@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Nochesky</string>
-    <string name="see_messier">See Messier Catalog</string>
+    <string name="see_catalogs">See catalogs</string>
+    <string name="messier">Messier</string>
+    <string name="open_cluster">Open Clusters</string>
+    <string name="globular_cluster">Globular Clusters</string>
+    <string name="galaxies">Galaxies</string>
+    <string name="nebulae">Nebulae</string>
 
     <string name="observable_object_detail_message" formatted="false">(%1s) - %2s - %3s - Right Ascension: %4s -
         Declination: %5s - Magnitude: %6s - Size %7s - Distance: %8s</string>

@@ -1,5 +1,6 @@
 package com.nochitsoft.nochesky.catalog;
 
+import com.nochitsoft.nochesky.R;
 import com.nochitsoft.nochesky.model.ObservableObject;
 
 import java.util.ArrayList;
@@ -8,19 +9,17 @@ import java.util.List;
 /**
  * Created by nochita on 2016-04-13.
  */
-public class MessierCatalog implements Catalogable {
-    @Override
+public class MessierCatalog extends BaseCatalog {
+
     public int getQuantity() {
         return 110;
     }
 
-    @Override
-    public String getName() {
-        return "Messier Objects";
+    public int getName() {
+        return R.string.messier;
     }
 
-    @Override
-    public List<ObservableObject> load() {
+    protected String[] populate() {
         String[] data = new String[getQuantity()];
 
         data[0] = "M-1|NGC-01952|Nebula (Supernova Remnant)|Taurus|8.40|5|33|30|+|22|01|00|6 x 4|6300|.";
@@ -134,10 +133,6 @@ public class MessierCatalog implements Catalogable {
         data[108] = "M-109|NGC-03992|Galaxy (Barred Spiral Type SBc)|Ursa Major|9.80|11|56|36|+|53|23|00|7 x 4|55000000|.";
         data[109] = "M-110|NGC-00205|Galaxy (Elliptical Type E6)|Andromeda|8.50|0|40|24|+|41|41|00|17 x 10|2900000|.";
 
-        List<ObservableObject> catalog = new ArrayList<ObservableObject>();
-        for(String obj : data){
-            catalog.add(new ObservableObject(obj));
-        }
-        return catalog;
+        return data;
     }
 }

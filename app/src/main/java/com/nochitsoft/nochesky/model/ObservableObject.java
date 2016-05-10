@@ -60,7 +60,9 @@ public class ObservableObject {
 
         this.setSize(tokenizer.nextToken());
         this.setDistance(tokenizer.nextToken());
-        this.setNotes(tokenizer.nextToken());
+        if(tokenizer.hasMoreTokens()){
+            this.setNotes(tokenizer.nextToken());
+        }
 
     }
 
