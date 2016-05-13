@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nochesky</string>
+    <string name="app_name">nochesky</string>
     <string name="see_catalogs">See catalogs</string>
     <string name="messier">Messier</string>
     <string name="open_cluster">Open Clusters</string>

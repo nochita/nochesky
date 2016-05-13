@@ -1,6 +1,10 @@
 # nochesky
-See astronomical catalogs
+Have main observable objects already preloaded on your phone so when stargazing in the middle of nowhere, with no internet connection, you can enjoy all the majesty of the sky.
 
-The idea of this app is to have the data of the main observable object already loaded on the app so that no internet connection is required  when going stargazing.
+Object are divided by type in different catalogs.
 
-This is a typical android project
+ * Messier objects
+ * Open clusters
+ * Globular clusters
+ * Galaxies
+ * Nebulae

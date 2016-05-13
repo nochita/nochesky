@@ -1,10 +1,10 @@
 <resources>
-    <string name="see_catalogs">Ver catalogos</string>
-    <string name="open_cluster">Cumulos Abiertos</string>
-    <string name="globular_cluster">Cumulos Globulares</string>
+    <string name="see_catalogs">Ver católogos</string>
+    <string name="open_cluster">Cúmulos Abiertos</string>
+    <string name="globular_cluster">Cúmulos Globulares</string>
     <string name="galaxies">Galaxias</string>
     <string name="nebulae">Nebulosas</string>
 
-    <string name="observable_object_detail_message" formatted="false">(%1s) - %2s - %3s - Ascension Recta: %4s -
-        Declinacion: %5s - Magnitud: %6s - Tamaño %7s - Distancia: %8s</string>
+    <string name="observable_object_detail_message" formatted="false">(%1s) - %2s - %3s - Ascensión Recta: %4s -
+        Declinación: %5s - Magnitud: %6s - Tamaño %7s - Distancia: %8s</string>
 </resources>
