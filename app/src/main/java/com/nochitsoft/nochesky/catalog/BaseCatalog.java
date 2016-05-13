@@ -1,5 +1,7 @@
 package com.nochitsoft.nochesky.catalog;
 
+import android.content.Context;
+
 import com.nochitsoft.nochesky.model.ObservableObject;
 
 import java.io.Serializable;
@@ -12,11 +14,15 @@ import java.util.List;
 public abstract class BaseCatalog implements Serializable {
 
     /**
-     * Loads the prepopulated data of the catalog.
+     * Loads the prepopulated data and returns the catalog.
+     * @param context the context
+     * @return a list of Observable Objects that represents a catalog
      */
-    public List<ObservableObject> load() {
-        String[] data = populate();
+    public List<ObservableObject> load(Context context) {
+        String[] data = context.getResources().getStringArray(getCatalogArrayResourceId());
 
+         /* this loop is to transform the string with the data with pipe separator to a
+          list of Observable Objects*/
         List<ObservableObject> catalog = new ArrayList<ObservableObject>();
         for(String obj : data){
             catalog.add(new ObservableObject(obj));
@@ -24,15 +30,13 @@ public abstract class BaseCatalog implements Serializable {
         return catalog;
     }
 
-    // TODO load from database
     /**
-     * Populates the data into an array of strings
-     *
+     * Returns the resource id of the array containing the catalog information.
      * */
-    protected abstract String[] populate();
+    protected abstract int getCatalogArrayResourceId();
 
     /**
-     * Returns the resource id of the string representing the name of the catalog
+     * Returns the resource id of the string representing the name of the catalog.
      */
-    public abstract int getName();
+    public abstract int getCatalogName();
 }

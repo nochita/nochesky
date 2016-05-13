@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.nochitsoft.nochesky.R;
 import com.nochitsoft.nochesky.catalog.BaseCatalog;
-import com.nochitsoft.nochesky.catalog.MessierCatalog;
 
 public class CatalogListFragment extends Fragment {
 
@@ -51,9 +50,9 @@ public class CatalogListFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new CatalogListAdapter(getActivity(), catalog.load());
+        adapter = new CatalogListAdapter(getActivity(), catalog.load(getActivity()));
 
-        getActivity().setTitle(catalog.getName());
+        getActivity().setTitle(catalog.getCatalogName());
 
         recyclerView.setAdapter(adapter);
     }
