@@ -1,6 +1,7 @@
 package com.nochitsoft.nochesky.model;
 
 /**
+ * Represents the format of the time, used for declination and right ascension.
  * Created by nochita on 2016-05-6.
  */
 public class TimeFormat {

@@ -7,6 +7,7 @@ import com.nochitsoft.nochesky.R;
 import java.util.StringTokenizer;
 
 /**
+ * Represents the observable object. This is the item of catalog.
  * Created by nochita on 2016-05-6.
  */
 public class ObservableObject {
@@ -31,6 +32,11 @@ public class ObservableObject {
 
     private String notes;
 
+    /**
+     * Constructor.
+     * @param stringData the string containing the observable object data, with pipe separator.
+     *
+     * */
     public ObservableObject(String stringData) {
 
         StringTokenizer tokenizer = new StringTokenizer(stringData, "|");
@@ -88,11 +94,6 @@ public class ObservableObject {
 
     public void setDeclination(TimeFormat declination) {
         this.declination = declination;
-    }
-
-    public String getDetailLabel(Context context) {
-        return context.getResources().getString(R.string.observable_object_detail_message, constellation,
-                type, otherCatalog, rightAscension, declination, magnitude, size, distance);
     }
 
     public String getNotes() {
@@ -155,4 +156,11 @@ public class ObservableObject {
         this.otherCatalog = otherCatalog;
     }
 
+    /**
+     * Returns a formatted text for human reading with all the details of this observable object.
+     * */
+    public String getDetailLabel(Context context) {
+        return context.getResources().getString(R.string.observable_object_detail_message, constellation,
+                type, otherCatalog, rightAscension, declination, magnitude, size, distance);
+    }
 }

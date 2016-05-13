@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.nochitsoft.nochesky.R;
 
+/**
+ * Base activity for all the activities in the app.
+ * */
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
