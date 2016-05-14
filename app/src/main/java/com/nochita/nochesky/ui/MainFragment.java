@@ -1,4 +1,4 @@
-package com.nochitsoft.nochesky.ui;
+package com.nochita.nochesky.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nochitsoft.nochesky.R;
-import com.nochitsoft.nochesky.catalog.BaseCatalog;
-import com.nochitsoft.nochesky.catalog.GalaxiesCatalog;
-import com.nochitsoft.nochesky.catalog.GlobularClusterCatalog;
-import com.nochitsoft.nochesky.catalog.MessierCatalog;
-import com.nochitsoft.nochesky.catalog.NebulaCatalog;
-import com.nochitsoft.nochesky.catalog.OpenClusterCatalog;
+import com.nochita.nochesky.R;
+import com.nochita.nochesky.catalog.BaseCatalog;
+import com.nochita.nochesky.catalog.GalaxiesCatalog;
+import com.nochita.nochesky.catalog.GlobularClusterCatalog;
+import com.nochita.nochesky.catalog.MessierCatalog;
+import com.nochita.nochesky.catalog.NebulaCatalog;
+import com.nochita.nochesky.catalog.OpenClusterCatalog;
 
 public class MainFragment extends Fragment {
 

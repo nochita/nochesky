@@ -1,8 +1,8 @@
-package com.nochitsoft.nochesky.catalog;
+package com.nochita.nochesky.catalog;
 
 import android.content.Context;
 
-import com.nochitsoft.nochesky.model.ObservableObject;
+import com.nochita.nochesky.model.ObservableObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;

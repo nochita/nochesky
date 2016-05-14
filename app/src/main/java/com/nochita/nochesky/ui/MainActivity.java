@@ -1,4 +1,4 @@
-package com.nochitsoft.nochesky.ui;
+package com.nochita.nochesky.ui;
 
 import android.support.v4.app.Fragment;
 

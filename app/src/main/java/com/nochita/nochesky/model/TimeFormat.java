@@ -1,4 +1,4 @@
-package com.nochitsoft.nochesky.model;
+package com.nochita.nochesky.model;
 
 /**
  * Represents the format of the time, used for declination and right ascension.

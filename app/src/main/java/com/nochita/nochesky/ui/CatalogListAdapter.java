@@ -1,4 +1,4 @@
-package com.nochitsoft.nochesky.ui;
+package com.nochita.nochesky.ui;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.nochitsoft.nochesky.R;
-import com.nochitsoft.nochesky.model.ObservableObject;
+import com.nochita.nochesky.R;
+import com.nochita.nochesky.model.ObservableObject;
 
 import java.util.List;
 

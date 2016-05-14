@@ -1,8 +1,8 @@
-package com.nochitsoft.nochesky.model;
+package com.nochita.nochesky.model;
 
 import android.content.Context;
 
-import com.nochitsoft.nochesky.R;
+import com.nochita.nochesky.R;
 
 import java.util.StringTokenizer;
 

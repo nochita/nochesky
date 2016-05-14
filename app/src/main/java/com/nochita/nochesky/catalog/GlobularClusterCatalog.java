@@ -1,8 +1,6 @@
-package com.nochitsoft.nochesky.catalog;
+package com.nochita.nochesky.catalog;
 
-import android.content.Context;
-
-import com.nochitsoft.nochesky.R;
+import com.nochita.nochesky.R;
 
 /**
  * Created by nochita on 10/05/2016.

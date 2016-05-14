@@ -1,4 +1,4 @@
-package com.nochitsoft.nochesky;
+package com.nochita.nochesky;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

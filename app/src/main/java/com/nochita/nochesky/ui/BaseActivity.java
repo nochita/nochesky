@@ -1,11 +1,11 @@
-package com.nochitsoft.nochesky.ui;
+package com.nochita.nochesky.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.nochitsoft.nochesky.R;
+import com.nochita.nochesky.R;
 
 /**
  * Base activity for all the activities in the app.

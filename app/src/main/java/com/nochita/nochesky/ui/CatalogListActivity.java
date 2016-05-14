@@ -1,8 +1,8 @@
-package com.nochitsoft.nochesky.ui;
+package com.nochita.nochesky.ui;
 
 import android.support.v4.app.Fragment;
 
-import com.nochitsoft.nochesky.catalog.BaseCatalog;
+import com.nochita.nochesky.catalog.BaseCatalog;
 
 public class CatalogListActivity extends BaseActivity {
 

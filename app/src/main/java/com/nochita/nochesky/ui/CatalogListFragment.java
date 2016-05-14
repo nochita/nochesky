@@ -1,4 +1,4 @@
-package com.nochitsoft.nochesky.ui;
+package com.nochita.nochesky.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nochitsoft.nochesky.R;
-import com.nochitsoft.nochesky.catalog.BaseCatalog;
+import com.nochita.nochesky.R;
+import com.nochita.nochesky.catalog.BaseCatalog;
 
 public class CatalogListFragment extends Fragment {
 
