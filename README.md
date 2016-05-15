@@ -8,3 +8,8 @@ Object are divided by type in different catalogs:
  * Globular clusters
  * Galaxies
  * Nebulae
+ 
+ 
+![Main screen](/screenshots/main.png?raw=true "Main screen")
+![List](/screenshots/list.png?raw=true "List")
+![Dialog](/screenshots/dialog.png?raw=true "Dialog")
