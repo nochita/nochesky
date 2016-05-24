@@ -19,11 +19,19 @@
             android:duplicateParentState="true"
             android:padding="8dp">
 
+            <ImageView
+                android:id="@+id/catalog_row_image"
+                android:layout_width="@dimen/catalog_row_image_size"
+                android:layout_height="@dimen/catalog_row_image_size"
+                android:layout_marginRight="8dp"
+                android:layout_alignParentLeft="true"/>
+
             <TextView
                 android:id="@+id/catalog_row_catalog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:duplicateParentState="true"
+                android:layout_toRightOf="@id/catalog_row_image"
                 style="@style/CatalogListName"/>
 
             <TextView
@@ -31,9 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:duplicateParentState="true"
-                android:layout_toRightOf="@id/catalog_row_catalog"
-                android:layout_marginLeft="6dp"
-                android:layout_alignBaseline="@id/catalog_row_catalog"/>
+                android:layout_toRightOf="@id/catalog_row_image"
+                android:layout_below="@id/catalog_row_catalog"/>
 
         </RelativeLayout>
 

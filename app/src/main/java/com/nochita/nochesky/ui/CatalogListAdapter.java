@@ -7,10 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nochita.nochesky.R;
 import com.nochita.nochesky.model.ObservableObject;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -21,10 +23,12 @@ public class CatalogListAdapter extends RecyclerView.Adapter<CatalogListAdapter.
 
     private Context context;
     private List<ObservableObject> observableObjectList;
+    private ImageLoader imageLoader;
 
     public CatalogListAdapter(Context context, List<ObservableObject> observableObjectList){
         this.context = context;
         this.observableObjectList = observableObjectList;
+        imageLoader = ImageLoader.getInstance();
     }
 
     @Override
@@ -51,6 +55,7 @@ public class CatalogListAdapter extends RecyclerView.Adapter<CatalogListAdapter.
         holder.catalog.setText(observableObject.getCatalog());
         holder.type.setText(observableObject.getType());
         holder.cardView.setTag(observableObject);
+        imageLoader.displayImage(observableObject.getImageUrl(), holder.image);
     }
 
     @Override
@@ -63,6 +68,7 @@ public class CatalogListAdapter extends RecyclerView.Adapter<CatalogListAdapter.
 
         public TextView catalog;
         public TextView type;
+        public ImageView image;
         public IMyViewHolderClicks listener;
         public CardView cardView;
 
@@ -70,6 +76,7 @@ public class CatalogListAdapter extends RecyclerView.Adapter<CatalogListAdapter.
             super(itemView);
             catalog = (TextView) itemView.findViewById(R.id.catalog_row_catalog);
             type = (TextView) itemView.findViewById(R.id.catalog_row_type);
+            image = (ImageView) itemView.findViewById(R.id.catalog_row_image);
             cardView = (CardView) itemView.findViewById(R.id.card_view_row);
 
             this.listener = listener;

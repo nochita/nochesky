@@ -1,6 +1,7 @@
 package com.nochita.nochesky.model;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.nochita.nochesky.R;
 
@@ -162,5 +163,15 @@ public class ObservableObject {
     public String getDetailLabel(Context context) {
         return context.getResources().getString(R.string.observable_object_detail_message, constellation,
                 type, otherCatalog, rightAscension, declination, magnitude, size, distance);
+    }
+
+    public String getImageUrl(){
+        String url = "https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_red&r="
+            + getRightAscension().getHour() + "+" + getRightAscension().getMinute() + "+" + getRightAscension().getSecond()
+            + "&d=" + getDeclination().getHour() + "+" + getDeclination().getMinute() + "+" + getDeclination().getSecond()
+            + "&e=J2000&h=5&w=5&f=gif&c=none&fov=NONE&v3=";
+
+        Log.d("nochesky - image url", url);
+        return url;
     }
 }
