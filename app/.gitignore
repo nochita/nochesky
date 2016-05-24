@@ -8,7 +8,6 @@
 /captures
 *.name
 .idea/.name
-*.xml
 .idea/modules.xml
 .idea/modules.xml
 .idea/runConfigurations.xml
