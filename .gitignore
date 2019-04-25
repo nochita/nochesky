@@ -11,5 +11,3 @@
 .idea/modules.xml
 .idea/modules.xml
 .idea/runConfigurations.xml
-*.bat
-gradlew
