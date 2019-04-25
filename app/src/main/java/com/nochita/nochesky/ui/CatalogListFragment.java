@@ -45,7 +45,6 @@ public class CatalogListFragment extends Fragment implements LoadCatalogContract
                 .loadCatalogModule(new LoadCatalogModule())
                 .build()
                 .inject();
-//        ((LoadCatalogApplication)getActivity().getApplication()).getLoadCatalogComponent().inject(this);
     }
 
     @Nullable

@@ -9,7 +9,6 @@ public class LoadCatalogApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        loadCatalogComponent = Dag.builder().loadCatalogModule(new LoadCatalogModule()).build();
     }
 
     public LoadCatalogComponent getLoadCatalogComponent(){
