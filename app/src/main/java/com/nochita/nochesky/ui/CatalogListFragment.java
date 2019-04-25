@@ -10,16 +10,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nochita.nochesky.R;
-import com.nochita.nochesky.catalog.BaseCatalog;
+import com.nochita.nochesky.contract.LoadCatalogContract;
+import com.nochita.nochesky.di.DaggerLoadCatalogComponent;
+import com.nochita.nochesky.di.LoadCatalogModule;
+import com.nochita.nochesky.model.CatalogType;
 
-public class CatalogListFragment extends Fragment {
+import javax.inject.Inject;
+
+public class CatalogListFragment extends Fragment implements LoadCatalogContract.View {
 
     private static final String ARG_CATALOG = "ARG_CATALOG";
     private RecyclerView recyclerView;
     private CatalogListAdapter adapter;
-    private BaseCatalog catalog;
+    private CatalogType catalogType;
 
-    public static CatalogListFragment newInstance(BaseCatalog catalog) {
+    @Inject
+    LoadCatalogContract.Presenter presenter;
+
+    public static CatalogListFragment newInstance(CatalogType catalog) {
         CatalogListFragment fragment = new CatalogListFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_CATALOG, catalog);
@@ -31,7 +39,12 @@ public class CatalogListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
-        catalog = (BaseCatalog) args.getSerializable(ARG_CATALOG);
+        catalogType = (CatalogType) args.getSerializable(ARG_CATALOG);
+
+        presenter = DaggerLoadCatalogComponent.builder()
+                .loadCatalogModule(new LoadCatalogModule())
+                .build()
+                .inject();
     }
 
     @Nullable
@@ -50,10 +63,18 @@ public class CatalogListFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new CatalogListAdapter(getActivity(), catalog.load(getActivity()));
+        presenter.setView(this);
+        presenter.populate(catalogType, getActivity());
+    }
 
-        getActivity().setTitle(catalog.getCatalogName());
-
+    @Override
+    public void showCatalog(CatalogListAdapter adapter) {
+        this.adapter = adapter;
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void showTitle(int titleResId) {
+        getActivity().setTitle(titleResId);
     }
 }

@@ -3,7 +3,7 @@ package com.nochita.nochesky.ui;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.nochita.nochesky.catalog.BaseCatalog;
+import com.nochita.nochesky.model.CatalogType;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -20,8 +20,8 @@ public class CatalogListActivity extends BaseActivity {
 
     @Override
     protected Fragment getFragment() {
-        BaseCatalog catalog = (BaseCatalog) getIntent().getSerializableExtra(EXTRA_CATALOG);
-        return CatalogListFragment.newInstance(catalog);
+        CatalogType catalogType = (CatalogType) getIntent().getSerializableExtra(EXTRA_CATALOG);
+        return CatalogListFragment.newInstance(catalogType);
     }
 
 }
