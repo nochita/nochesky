@@ -27,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             fragmentManager.beginTransaction()
                     .commit();
         }
+
     }
 
     protected abstract Fragment getFragment();

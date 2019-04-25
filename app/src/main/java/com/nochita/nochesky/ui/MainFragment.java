@@ -9,12 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nochita.nochesky.R;
-import com.nochita.nochesky.catalog.BaseCatalog;
-import com.nochita.nochesky.catalog.GalaxiesCatalog;
-import com.nochita.nochesky.catalog.GlobularClusterCatalog;
-import com.nochita.nochesky.catalog.MessierCatalog;
-import com.nochita.nochesky.catalog.NebulaCatalog;
-import com.nochita.nochesky.catalog.OpenClusterCatalog;
+import com.nochita.nochesky.model.CatalogType;
 
 public class MainFragment extends Fragment {
 
@@ -35,40 +30,40 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.see_messier_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doStartCatalogActivity(new MessierCatalog());
+                doStartCatalogActivity(CatalogType.MESSIER);
             }
         });
 
         view.findViewById(R.id.see_open_cluster_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doStartCatalogActivity(new OpenClusterCatalog());
+                doStartCatalogActivity(CatalogType.OPEN_CLUSTER);
             }
         });
 
         view.findViewById(R.id.see_globular_cluster_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doStartCatalogActivity(new GlobularClusterCatalog());
+                doStartCatalogActivity(CatalogType.GLOBULAR_CLUSTER);
             }
         });
 
         view.findViewById(R.id.see_galaxy_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doStartCatalogActivity(new GalaxiesCatalog());
+                doStartCatalogActivity(CatalogType.GALAXY);
             }
         });
 
         view.findViewById(R.id.see_nebula_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doStartCatalogActivity(new NebulaCatalog());
+                doStartCatalogActivity(CatalogType.NEBULA);
             }
         });
     }
 
-    private void doStartCatalogActivity(BaseCatalog catalog){
+    private void doStartCatalogActivity(CatalogType catalog){
         Intent intent = new Intent(getContext(), CatalogListActivity.class);
         intent.putExtra(CatalogListActivity.EXTRA_CATALOG, catalog);
         startActivity(intent);
